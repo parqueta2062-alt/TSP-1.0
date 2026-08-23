@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use TSP 1.0 or its reproducibility code, please cite the archived TSP 1.0 release."
-title: "TSP 1.0 — Teoría de la Prevalencia Estructural"
+title: "TSP 1.0 — Theory of Structural Prevalence"
 type: software
 authors:
   - family-names: Paz
@@ -9,7 +9,7 @@ version: 1.0.0
 date-released: 2026-08-28
 repository-code: "https://github.com/parqueta2062-alt/TSP-1.0"
 url: "https://jesuspaz.science"
-abstract: "Código y material reproducible asociado a la primera formulación matemática de la Teoría de la Prevalencia Estructural (TSP 1.0)."
+abstract: "Code and reproducible material associated with the first mathematical formulation of the Theory of Structural Prevalence (TSP 1.0)."
 keywords:
   - structural prevalence
   - nonlinear dynamics
