@@ -1,23 +1,23 @@
-# Documentación TSP 1.0
+# TSP 1.0 Documentation
 
-La jerarquía científica del lanzamiento es:
+The scientific hierarchy of the release is:
 
-1. **Documento Base — Principios Fundamentales:** define qué propone la TSP.
-2. **Parte II — Formulación y Demostración Matemática:** formaliza y comprueba propiedades del modelo mínimo.
-3. **Resumen Ejecutivo:** documento breve de entrada al paquete científico.
-4. **Este repositorio:** reproduce cálculos y figuras de la Parte II.
-5. **Zenodo:** depósito permanente y DOI de la versión archivada.
-6. **jesuspaz.science:** presentación pública oficial.
+1. **Base Document — Fundamental Principles:** defines what TSP proposes.
+2. **Part II — Mathematical Formulation and Demonstration:** formalizes and verifies properties of the minimal model.
+3. **Executive Summary:** concise entry document to the scientific package.
+4. **This repository:** reproduces calculations and figures from Part II.
+5. **Zenodo:** permanent archive and DOI for the approved release.
+6. **jesuspaz.science:** official public presentation.
 
-## Alcance
+## Scope
 
-El repositorio no amplía TSP 1.0. Reproduce la formulación matemática cerrada el 23 de agosto de 2026. Las aplicaciones físicas concretas, extensiones espaciales y futuras contrastaciones deben mantenerse separadas del núcleo TSP 1.0.
+This repository does not expand TSP 1.0. It reproduces the mathematical formulation closed on 23 August 2026. Concrete physical applications, spatial extensions, and future empirical tests must remain separate from the TSP 1.0 mathematical core.
 
-## Resultados de referencia
+## Reference results
 
 ```text
-Caso canónico: chi=2.5, kappa=1, delta=1
-Puntos fijos: 0, 0.5, 2.0
+Canonical case: chi=2.5, kappa=1, delta=1
+Fixed points: 0, 0.5, 2.0
 Theta0: 1.5625
 kappa_c: 1.5625
 tau_c(2.2): 0.455526
@@ -29,4 +29,4 @@ du/dtau(u=1,m=0): -0.5
 du/dtau(u=1,m=0.7): +0.2
 ```
 
-Estos valores son los que debe reproducir `src/verify_results.py`.
+These are the reference values that `src/verify_results.py` must reproduce.
