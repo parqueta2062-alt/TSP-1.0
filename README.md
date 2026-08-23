@@ -1,25 +1,25 @@
-# TSP 1.0 — Teoría de la Prevalencia Estructural
+# TSP 1.0 — Theory of Structural Prevalence
 
-Repositorio técnico reproducible de **TSP 1.0**, asociado a la primera formulación matemática de la Teoría de la Prevalencia Estructural.
+Reproducible technical repository for **TSP 1.0**, associated with the first mathematical formulation of the Theory of Structural Prevalence.
 
-**Autor:** Jesus Paz  
-**Presentación formal prevista:** 28 de agosto de 2026
+**Author:** Jesus Paz  
+**Formal presentation:** 28 August 2026
 
-## Alcance
+## Scope
 
-Este repositorio reproduce los resultados matemáticos y numéricos de la Parte II de TSP 1.0. No constituye por sí solo una validación de universalidad física. La correspondencia con sistemas físicos concretos, la estimación de parámetros a partir de datos y la contrastación independiente son etapas posteriores.
+This repository reproduces the mathematical and numerical results of Part II of TSP 1.0. It does not by itself constitute validation of physical universality. Mapping the model to concrete physical systems, estimating parameters from data, and independent empirical testing are subsequent stages.
 
-## Modelo canónico
+## Canonical model
 
-La familia dinámica mínima es
+The minimal dynamical family is
 
 ```text
 du/dτ = u - χ̂ u² + κ̂ u^(2+δ)
 ```
 
-con `χ̂ > 0`, `κ̂ > 0` y `δ > 0` para el análisis general de bifurcación desarrollado en TSP 1.0.
+with `χ̂ > 0`, `κ̂ > 0`, and `δ > 0` for the general bifurcation analysis developed in TSP 1.0.
 
-Caso canónico:
+Canonical case:
 
 ```text
 δ = 1
@@ -29,38 +29,38 @@ Caso canónico:
 du/dτ = u - 2.5u² + u³ = u(u - 0.5)(u - 2)
 ```
 
-Puntos fijos: `u*=0`, `u*=0.5` y `u*=2.0`.
+Fixed points: `u*=0`, `u*=0.5`, and `u*=2.0`.
 
-- `u0 < 2` → convergencia hacia `u*=0.5`.
-- `u0 = 2` → separatriz inestable.
-- `u0 > 2` → régimen de prevalencia y divergencia matemática en tiempo finito.
+- `u0 < 2` → convergence toward `u*=0.5`.
+- `u0 = 2` → unstable separatrix.
+- `u0 > 2` → prevalence regime and mathematical finite-time divergence.
 
-Tiempos críticos exactos usados en la Figura 1:
+Exact critical times used in Figure 1:
 
 ```text
 τc(2.2) ≈ 0.455526
 τc(3.0) ≈ 0.123109
 ```
 
-## Invariante de Control de Prevalencia
+## Prevalence Control Invariant
 
 ```text
 Θ = [δ^δ/(1+δ)^(1+δ)] · [χ̂^(1+δ)/κ̂]
 ```
 
-Clasificación:
+Classification:
 
-- `Θ > 1` → atractor positivo + separatriz.
-- `Θ = 1` → bifurcación silla-nodo.
-- `Θ < 1` → sin puntos fijos positivos; prevalencia global dentro del modelo.
+- `Θ > 1` → positive attractor + separatrix.
+- `Θ = 1` → saddle-node bifurcation.
+- `Θ < 1` → no positive fixed points; global prevalence within the minimal model.
 
-Para `χ̂=2.5`, `δ=1`:
+For `χ̂=2.5`, `δ=1`:
 
 ```text
 κ̂c = 1.5625
 ```
 
-## Memoria estructural mínima
+## Minimal structural-memory extension
 
 ```text
 dm/dτ = u - λm
@@ -68,24 +68,26 @@ dm/dτ = u - λm
 du/dτ = u - χ̂u² + κ̂(1+αm)u^(2+δ)
 ```
 
-El invariante efectivo es
+The effective invariant is
 
 ```text
 Θeff = Θ0/(1+αm)
 mc = (Θ0-1)/α
 ```
 
-Para el caso canónico con `α=1`, `Θ0=1.5625`:
+For the canonical case with `α=1`, `Θ0=1.5625`:
 
 ```text
 mc = 0.5625
 ```
 
-La Figura 3 compara `u0=1` con `m0=0` y `m0=0.7`, usando `λ=2`.
+Figure 3 compares `u0=1` with `m0=0` and `m0=0.7`, using `λ=2`.
 
-## Reproducción
+The variable `m` explicitly carries history-dependent information. In the enlarged state space `(u,m)`, the coupled dynamics can be represented as Markovian; the extension therefore models structural memory without claiming that it proves fundamental non-Markovianity.
 
-Requiere Python 3.10+.
+## Reproduction
+
+Requires Python 3.10+.
 
 ```bash
 python -m venv .venv
@@ -101,9 +103,9 @@ python src/figure_2_bifurcation.py
 python src/figure_3_structural_memory.py
 ```
 
-Las figuras se guardan en `figures/`.
+Figures are saved in `figures/`.
 
-## Estructura
+## Repository structure
 
 ```text
 TSP-1.0/
@@ -121,12 +123,32 @@ TSP-1.0/
     └── README.md
 ```
 
-## Estado científico
+## Scientific status
 
-TSP 1.0 es una **propuesta fenomenológica formalizada pendiente de validación física**. Este repositorio permite reproducir el núcleo matemático presentado: atractores y separatrices, transición topológica mediante `Θ`, ley asintótica del régimen dominante y extensión mínima de memoria activa.
+TSP 1.0 is a **formalized phenomenological proposal pending physical validation**. This repository makes its mathematical core reproducible: attractors and separatrices, the topological transition classified by `Θ`, the asymptotic scaling law in the dominant regime, and a minimal active-memory extension.
 
-No demuestra todavía que estos mecanismos sean universales en la naturaleza ni identifica de forma única los parámetros del modelo con magnitudes físicas de todos los sistemas.
+It does not yet demonstrate that these mechanisms are universal in nature, nor does it uniquely identify the model parameters with physical observables across different systems.
 
-## Registro y documentación
+The asymptotic prediction of the minimal prevalence regime is
 
-Los enlaces definitivos al depósito Zenodo/DOI y a la página oficial en `jesuspaz.science` se incorporarán al congelar la versión pública TSP 1.0.
+```text
+tc ∝ S0^(-(1+δ))
+```
+
+A meaningful physical test requires `S`, `ω`, `χ`, `κ`, and `δ` to be operationally defined for a concrete system, with `δ` constrained independently rather than freely selected after fitting.
+
+## Language policy
+
+**English is the primary scientific and archival language of the TSP 1.0 GitHub/Zenodo release.** Spanish material may be maintained separately as complementary dissemination material.
+
+## Versioning and archival
+
+This repository is connected to Zenodo. The first archival DOI for TSP 1.0 will be generated only from an approved GitHub release after the repository contents and metadata have passed final review.
+
+## Previous TSP record
+
+An earlier English-language TSP preprint was deposited in Zenodo in May 2026. TSP 1.0 is being prepared as a distinct revised formulation, with a clearer separation between conceptual principles, mathematical formalization, reproducibility, and subsequent empirical validation.
+
+## Official documentation
+
+The definitive Zenodo DOI and official TSP 1.0 presentation page at `jesuspaz.science` will be added when the release is frozen.
