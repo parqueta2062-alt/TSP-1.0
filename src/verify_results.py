@@ -1,4 +1,4 @@
-"""Independent numerical/algebraic checks for the published TSP 1.0 examples."""
+"""Independent numerical and algebraic checks for the TSP 1.0 reference examples."""
 import math
 import numpy as np
 
@@ -31,7 +31,7 @@ assert math.isclose(theta(2.5, 2.0, 1.0), 0.78125, rel_tol=0, abs_tol=1e-12)
 assert math.isclose(tau_c(2.2), 0.455526, abs_tol=1e-6)
 assert math.isclose(tau_c(3.0), 0.123109, abs_tol=1e-6)
 
-# Memory test at the same observable u=1.
+# Structural-memory test at the same observable value u=1.
 def memory_du(u, m, alpha=1.0):
     return u - CHI*u**2 + KAPPA*(1+alpha*m)*u**3
 
